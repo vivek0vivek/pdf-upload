@@ -1,21 +1,172 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Global Styles */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, #00c6ff, #0072ff); /* Gradient background */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Wrapper to Center everything */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* App Name Section */
+.app-name {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.app-name h1 {
+  font-size: 36px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Main Container with rounded borders and shadow */
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 1200px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  gap: 40px;
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px); /* Slight hover effect */
+}
+
+/* Upload and Preview Section */
+.upload-section,
+.preview-section {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 15px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.upload-section:hover,
+.preview-section:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px); /* Hover effect for interactive feel */
+}
+
+/* Title inside each section */
+.upload-section h1,
+.preview-section h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* File Input Style */
+.upload-section input[type="file"] {
+  padding: 15px;
+  border: 2px dashed #0072ff;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.upload-section input[type="file"]:hover {
+  background-color: #e8f0fe; /* Light blue on hover */
+}
+
+/* Upload Button Style */
+.upload-section button {
+  background-color: #0072ff;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.upload-section button:hover {
+  background-color: #005bb5;
+}
+
+.upload-section button:active {
+  transform: scale(0.98);
+}
+
+/* Uploaded PDFs list */
+ul {
+  list-style-type: none;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+ul li {
+  background-color: #f1f1f1;
+  padding: 15px;
+  margin: 8px 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+ul li:hover {
+  transform: translateX(5px);
+  background-color: #e0e0e0;
+}
+
+ul li a {
+  color: #0072ff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+ul li button {
+  background-color: #ff4b5c;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+ul li button:hover {
+  background-color: #e44c4f;
+}
+
+ul li button:active {
+  transform: scale(0.98);
 }
